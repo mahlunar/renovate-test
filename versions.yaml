@@ -1,2 +1,2 @@
 # renovate: datasource=github-releases depName=snyk/cli
-ENV SNYK_VERSION=v1.1030.0
+SNYK_VERSION=v1.1030.0
