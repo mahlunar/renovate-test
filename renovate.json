@@ -3,11 +3,18 @@
   "extends": ["config:base"],
   "regexManagers": [
     {
-      "description": "Update _VERSION variables in Dockerfiles",
-      "fileMatch": ["^.*versions.yaml$"],
+      "fileMatch": ["^versions\\.yml$"],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\s.+?_VERSION=(?<currentValue>.+?)\\s"
-      ]
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*?: (?<currentValue>.*)"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": [".*"],
+      "managers": ["regex"],
+      "extractVersion": "^(release\\/)?(?<version>.*)$"
     }
   ]
 }
