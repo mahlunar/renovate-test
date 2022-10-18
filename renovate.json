@@ -7,8 +7,7 @@
       "fileMatch": ["^.*versions.yaml$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ENV|ARG) .+?LINKERD_AWAIT_VERSION=(?<currentValue>.+?)\\s"
-      ],
-      "extractVersionTemplate": "^(release\\/)?(?<version>.*)$"
+      ]
     }
   ]
 }
