@@ -1,2 +1,5 @@
 # renovate: datasource=github-releases depName=snyk/cli
 SNYK_VERSION=v1.1030.0
+
+# renovate: datasource=github-releases depName=linkerd/linkerd-await
+LINKERD_AWAIT_VERSION=v0.2.5
