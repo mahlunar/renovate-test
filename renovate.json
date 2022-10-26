@@ -16,5 +16,8 @@
       "managers": ["regex"],
       "extractVersion": "^(release\\/)?(?<version>.*)$"
     }
-  ]
+  ],
+  "docker-compose": {
+    "fileMatch": ["(^|/)?:(.*)(?:docker-)?compose[^/]*\\.ya?ml$"]
+  }
 }
